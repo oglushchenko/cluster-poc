@@ -31,3 +31,11 @@ spec:
         name: postgresql
         namespace: postgresql
       interval: 12h
+  values:
+    controller:
+      global:
+        postgresql:
+          auth:
+            postgresPassword: "postgres"
+            username: "test"
+            password: "postgres"
