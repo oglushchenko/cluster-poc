@@ -29,7 +29,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-        namespace: postgresql
       interval: 12h
   values:
     controller:

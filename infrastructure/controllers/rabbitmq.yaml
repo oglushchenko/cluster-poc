@@ -29,7 +29,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-        namespace: rabbitmq
       interval: 12h
   values:
     auth:
