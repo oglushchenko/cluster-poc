@@ -5,3 +5,4 @@ resources:
   - ingress-nginx.yaml
   - postgresql.yaml
   - rabbitmq.yaml
+  - prometheus.yaml
