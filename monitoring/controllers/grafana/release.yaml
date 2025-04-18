@@ -31,8 +31,12 @@ spec:
           - name: Loki
             type: loki
             access: proxy
-            url: http://loki-gateway.loki.svc.cluster.local/
+            url: http://loki-gateway/
           - name: Tempo
             type: tempo
             access: proxy
-            url: http://tempo-query-frontend.tempo.svc.cluster.local:3100
+            url: http://tempo-query-frontend:3100
+          - name: Prometheus
+            type: prometheus
+            access: proxy
+            url: http://prometheus-server
