@@ -68,4 +68,4 @@ spec:
             - name: Prometheus
               type: prometheus
               access: proxy
-              url: http://prometheus-server
+              url: http://prometheus-operated
