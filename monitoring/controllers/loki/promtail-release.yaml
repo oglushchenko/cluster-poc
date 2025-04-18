@@ -5,6 +5,8 @@ metadata:
 spec:
   interval: 5m
   timeout: 1m
+  dependsOn:
+    - name: grafana
   chart:
     spec:
       version: "6.x"

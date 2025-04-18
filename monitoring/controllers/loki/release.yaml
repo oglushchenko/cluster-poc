@@ -4,6 +4,8 @@ metadata:
   name: loki
 spec:
   interval: 5m
+  dependsOn:
+    - name: grafana
   chart:
     spec:
       version: "6.x"

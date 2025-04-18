@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana
+spec:
+  interval: 5m
+  chart:
+    spec:
+      version: "6.x"
+      chart: grafana
+      sourceRef:
+        kind: HelmRepository
+        name: grafana-charts
+      interval: 60m
+  values:
+    adminUser: admin
+    adminPassword: admin
+    grafana.ini:
+      server:
+        root_url: "%(protocol)s://%(domain)s/grafana"
+        serve_from_sub_path: true
+    ingress:
+      enabled: true  
+      ingressClassName: nginx
+      path: /grafana
+      hosts: {}
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Loki
+            type: loki
+            access: proxy
+            url: http://loki-gateway.loki.svc.cluster.local/
+          - name: Tempo
+            type: tempo
+            access: proxy
+            url: http://tempo-query-frontend.tempo.svc.cluster.local:3100
