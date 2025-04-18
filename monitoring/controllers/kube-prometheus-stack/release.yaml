@@ -53,19 +53,3 @@ spec:
         ingressClassName: nginx
         path: /grafana
         hosts: {}
-      datasources:
-        datasources.yaml:
-          apiVersion: 1
-          datasources:
-            - name: Loki
-              type: loki
-              access: proxy
-              url: http://loki-gateway/
-            - name: Tempo
-              type: tempo
-              access: proxy
-              url: http://tempo-query-frontend:3100
-            - name: Prometheus
-              type: prometheus
-              access: proxy
-              url: http://prometheus-operated
