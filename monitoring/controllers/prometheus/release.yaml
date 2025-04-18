@@ -21,3 +21,6 @@ spec:
   values:
     alertmanager:
       enabled: false
+    prometheus-node-exporter:
+      hostRootFsMount:
+        enabled: false
