@@ -33,7 +33,8 @@ spec:
       interval: 12h
   values:
     controller:
-      service:
-        type: "NodePort"
-    admissionWebhooks:
-      enabled: false
+      config:
+        hsts: "false"
+        ssl-redirect: "false"
+        force-ssl-redirect: "false"
+  
